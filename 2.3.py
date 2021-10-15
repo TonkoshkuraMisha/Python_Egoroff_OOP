@@ -21,6 +21,7 @@ class Point:
         else:
             return ((self.x - another_point.x) ** 2 + (self.y - another_point.y) ** 2) ** 0.5
 
+
 class Dog:
     def __init__(self, name, age):
         self.name = name
@@ -29,6 +30,36 @@ class Dog:
     def description(self):
         return f"{self.name} is {self.age} years old"
 
-    def speak (self, sound):
+    def speak(self, sound):
         self.sound = sound
         return f"{self.name} says {self.sound}"
+
+
+class Stack:
+    def __init__(self):
+        self.values = []
+
+    def is_empty(self):
+        if self.values:
+            return False
+        else:
+            return True
+
+    def push(self, item):
+        self.values.append(item)
+
+    def pop(self):
+        if self.is_empty() is False:
+            return self.values.pop()
+        else:
+            print("Empty Stack")
+
+    def peek(self):
+        if self.is_empty()  is False:
+            return self.values[-1]
+        else:
+            print("Empty Stack")
+            return None
+
+    def size(self):
+        return len(self.values)
