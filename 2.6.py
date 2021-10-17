@@ -19,8 +19,10 @@ class BankAccount:
         print('del balance')
         del self.__balance
 
-    balance = property(fget=get_balance, fset=set_balance, fdel=del_balance)
-
+    my_balance = property()
+    my_balance = my_balance.getter(get_balance)
+    my_balance = my_balance.setter(set_balance)
+    my_balance = my_balance.deleter(del_balance)
 
 
 class UserMail:
