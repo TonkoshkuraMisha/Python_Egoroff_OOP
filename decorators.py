@@ -1,6 +1,8 @@
 # Декораторы. Примеры.
+from functools import wraps
 
 def header(func):
+    @wraps(func)
     def inner(*args, **kwargs):
         print('<h1>')
         func(*args, **kwargs)
@@ -10,6 +12,7 @@ def header(func):
 
 
 def table(func):
+    @wraps(func)
     def inner(*args, **kwargs):
         print('<table>')
         func(*args, **kwargs)
@@ -25,3 +28,12 @@ def say(name, lastname):
 
 
 say('Tonkoshkura', 'Misha')
+
+
+def sqr(x):
+    """
+    Возведение в квадрат аргумента.
+    :param x:
+    :return:
+    """
+    print(x**2)
