@@ -1,7 +1,7 @@
 # classmethod and staticmethod
 
 class Example:
-    def hello():
+    def hello(self):
         print('Hello!')
 
     def instance_hello(self):
